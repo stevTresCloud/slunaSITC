@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="slunaSITC.Views.MainPage"
+             Title="MainPage">
+    <ContentPage.Resources>
+        <Style TargetType="Entry">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="TextColor">
+                <AppThemeBinding Light="Black" Dark="White" />
+            </Setter>
+            <Setter Property="BackgroundColor">
+                <AppThemeBinding Light="White" Dark="#2C2C2C" />
+            </Setter>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="TextColor">
+                <AppThemeBinding Light="Black" Dark="White" />
+            </Setter>
+        </Style>
+        <Style TargetType="Picker">
+            <Setter Property="TextColor">
+                <AppThemeBinding Light="Black" Dark="White" />
+            </Setter>
+            <Setter Property="BackgroundColor">
+                <AppThemeBinding Light="White" Dark="#2C2C2C" />
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10" BackgroundColor="{AppThemeBinding Light='White', Dark='#121212'}">
+            <Label Text="Taller Semana 1" FontAttributes="Bold" FontSize="24" TextColor="Red" HorizontalOptions="Center"/>
+            <Label Text="Formulario de inscripción:" FontSize="18" TextColor="Blue"/>
+            <Image Source="bannerinscripcion.png" HeightRequest="100" HorizontalOptions="Center"/>
+
+            <Grid ColumnDefinitions="140,*" ColumnSpacing="8" RowSpacing="8">
+                <Label Text="Tipo de ID:" Grid.Column="0" VerticalOptions="Center" Margin="0,5"/>
+                <Picker x:Name="idTypePicker" Grid.Column="1" HorizontalOptions="FillAndExpand"/>
+            </Grid>
+
+            <Grid ColumnDefinitions="150,*" RowSpacing="8">
+                <Label Text="Identificación:" Grid.Column="0" VerticalOptions="Center" Margin="0,5"/>
+                <Entry x:Name="identificationEntry" Grid.Column="1" Placeholder="Cedula/RUC/Pasaporte" Keyboard="Numeric" HorizontalOptions="FillAndExpand"/>
+            </Grid>
+            <Grid ColumnDefinitions="140,*,*" ColumnSpacing="8" RowSpacing="8">
+                <Label Text="Apellidos:" Grid.Column="0" VerticalOptions="Center" Margin="0,5"/>
+                <Entry x:Name="lastNameEntry" Grid.Column="1" Placeholder="Paterno" HorizontalOptions="FillAndExpand"/>
+                <Entry x:Name="middleNameEntry" Grid.Column="2" Placeholder="Materno" HorizontalOptions="FillAndExpand"/>
+            </Grid>
+            <Grid ColumnDefinitions="150,*" RowSpacing="8">
+                <Label Text="Nombres:" Grid.Column="0" VerticalOptions="Center" Margin="0,5"/>
+                <Entry x:Name="fullNameEntry" Grid.Column="1" Placeholder="Nombres completos" HorizontalOptions="FillAndExpand"/>
+            </Grid>
+            <Grid ColumnDefinitions="150,*" RowSpacing="8">
+                <Label Text="Teléfono:" Grid.Column="0" VerticalOptions="Center" Margin="0,5"/>
+                <Entry x:Name="phoneEntry" Grid.Column="1" Placeholder="Teléfono personal" Keyboard="Telephone" HorizontalOptions="FillAndExpand"/>
+            </Grid>
+            <Grid ColumnDefinitions="150,*" RowSpacing="8">
+                <Label Text="Correo:" Grid.Column="0" VerticalOptions="Center" Margin="0,5"/>
+                <Entry x:Name="emailEntry" Grid.Column="1" Placeholder="Correo personal" Keyboard="Email" HorizontalOptions="FillAndExpand"/>
+            </Grid>
+            <Grid ColumnDefinitions="150,*" RowSpacing="8">
+                <Label Text="Confirmar correo:" Grid.Column="0" VerticalOptions="Center" Margin="0,5"/>
+                <Entry x:Name="confirmEmailEntry" Grid.Column="1" Placeholder="Confirmar correo" Keyboard="Email" HorizontalOptions="FillAndExpand"/>
+            </Grid>
+
+            <Grid ColumnDefinitions="150,*" RowSpacing="8">
+                <Label Text="Carrera:" Grid.Column="0" VerticalOptions="Center" Margin="0,5"/>
+                <Picker x:Name="careerPicker" Grid.Column="1" HorizontalOptions="FillAndExpand"/>
+            </Grid>
+
+            <Grid ColumnDefinitions="150,*" RowSpacing="8">
+                <Label Text="Modalidad:" Grid.Column="0" VerticalOptions="Center" Margin="0,5"/>
+                <Picker x:Name="modalityPicker" Grid.Column="1" HorizontalOptions="FillAndExpand"/>
+            </Grid>
+
+            <Grid ColumnDefinitions="150,*" RowSpacing="8">
+                <Label Text="Campus:" Grid.Column="0" VerticalOptions="Center" Margin="0,5"/>
+                <Entry x:Name="campusEntry" Grid.Column="1" Placeholder="Campus" HorizontalOptions="FillAndExpand"/>
+            </Grid>
+
+            <Button Text="GUARDAR DATOS" BackgroundColor="Purple" TextColor="White" Clicked="OnSaveClicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
